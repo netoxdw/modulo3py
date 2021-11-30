@@ -1,12 +1,15 @@
 # Calculadora de intereses de una tarjeta de credito
 
+from sesion2.postwork import crea_tarjeta
+
+
 print('Ingrese los siguientes datos.')
 
 print('Nombre de la tarjeta:')
 tarjeta = input ()
 
 
-print('Tasa de interes:')
+print('Tasa de interes en %:')
 ti = float(input ())/100
 im = ti/12
 
@@ -27,5 +30,3 @@ else:
 diferencia = deudatotal - pago
 nueva_deuda = diferencia * (1+im)
 print(f'Nueva deuda: ${nueva_deuda}')
-
-
