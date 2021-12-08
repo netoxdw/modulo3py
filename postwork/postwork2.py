@@ -1,41 +1,45 @@
+# Funcion crear_tarjeta que devuelve un diccionario
+def crear_tarjeta(nombre, cliente,
+tipo_tarjeta, t_tarjeta,
+tasa_interes, ti,
+deuda, deuda_total,
+monto_pago, pago
+):
+    tarjeta = {}
+    tarjeta [nombre] = cliente
+    tarjeta [tipo_tarjeta] = t_tarjeta
+    tarjeta [tasa_interes] = ti
+    tarjeta [deuda] = deuda_total
+    tarjeta [monto_pago] = pago
 
-def crear_tarjeta(nombre, tarjeta, interes, deuda, deudatoal, pago, nueva_deuda):
-    my_dic_tarjeta = {
-        'Nombre':nombre,
-        'Tarjeta': tarjeta,
-        'Tasa de interes': interes,
-        'Deuda': deuda,
-        'Deuda total': deudatotal,
-        'Pago mensual': pago,
-        'Nueva deuda':nueva_deuda
-    }
-    return my_dic_tarjeta
+    return tarjeta
 
-print(f'Ingresa los siguientes datos.\n ¿Cual es su nombre')
-name = input()
+# Solicitud de datos
+print('Ingrese los siguientes datos')
+print('Nombre:')
+Nombre = input()
+
 print('Tipo de tarjeta:')
-tipo_tarjeta = input()
-print('Tasa de interes')
-ti = float(input ())
+Tarjeta = input()
+
+print('Tasa de inetres:')
+ti =float(input())
 im = (ti/12)/100
+
 print('Deuda:')
-deudaparcial = float(input ())
-deudatotal = deudaparcial * (1 + im)
-print(f'Deuda total:{deudatotal}')
+deuda_parcial = float(input())
+deuda_total = deuda_parcial * (1 + im)
+
 print('Monto de pago:')
 pago = float(input())
 
-if  pago <= deudatotal:
-    print('Gracias por tu pago')
-    diferencia = deudatotal - pago
-    nueva_deuda = diferencia * (1+im)
-    print(f'Nueva deuda: ${nueva_deuda}')
-else:
-    print('El pago es mayor a lo adeudado, por favor, ingresa nuevamente los datos')
-
-
-print(crear_tarjeta(name, tipo_tarjeta, ti, deudaparcial, deudatotal, pago, nueva_deuda))
-
-
+mi_tarjeta =  crear_tarjeta(
+    'Cliente', Nombre,
+    'Tipo de tarejta', Tarjeta,
+    'Tasa de interes', ti,
+    'Deuda total', deuda_total,
+    'pago', pago
+)
+print(mi_tarjeta)
 
 
